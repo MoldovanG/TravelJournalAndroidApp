@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewTravelActivity"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Trip"
+        android:layout_marginTop="@dimen/dim_5"/>
+    <EditText
+        android:id="@+id/trip_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:autofillHints="@string/Dest"
+        android:drawableLeft="@drawable/tripicon"/>
+    <TextView
+        android:layout_marginTop="@dimen/dim_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Dest" />
+    <EditText
+        android:id="@+id/destination_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:autofillHints="@string/Dest"
+        android:drawableLeft="@drawable/destinationicon"/>
+
+    <TextView
+        android:layout_marginTop="@dimen/dim_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Type" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="City Break" />
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sea side" />
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mountains" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_marginTop="@dimen/dim_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price" />
+
+    <SeekBar
+        android:layout_marginTop="@dimen/dim_5"
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="20" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/space_15">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Date"
+            android:layout_weight="50"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End Date"
+            android:layout_weight="50"/>
+
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dim_5">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:ems="10"
+            android:inputType="date"
+            android:text="@string/dd_mm_yyyy"
+            android:background="#3330"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:ems="10"
+            android:inputType="date"
+            android:text="@string/dd_mm_yyyy"
+            android:background="#3330"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rating"
+        android:layout_marginTop="@dimen/space_15"/>
+
+    <RatingBar
+        android:layout_marginTop="@dimen/space_15"
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_add_image"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="@string/addimage"
+        android:background="#24584A"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:onClick="btnSaveNewTravelOnClick"
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_55"
+        android:text="@string/save"
+        android:background="#347b69"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>
