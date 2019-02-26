@@ -1,11 +1,8 @@
 package com.example.george.travelaplication;
 
 import android.arch.persistence.room.Room;
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,12 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainFragment extends Fragment {
 
-    private static final String TAG ="MAINFRAGMENTTAG" ;
+    private static final String TAG = "MAINFRAGMENTTAG";
     private RecyclerView mRecyclerView;
     private TravelAdapter mTravelAdapter;
     private List<TravelObject> mTravelList;
@@ -30,14 +26,14 @@ public class MainFragment extends Fragment {
 
         mRecyclerView = rootView.findViewById(R.id.recyclerview_travel);
 
-       AppDatabase db = Room.databaseBuilder(getContext(), AppDatabase.class, "production")
-               .allowMainThreadQueries()
-               .build();
+        AppDatabase db = Room.databaseBuilder(getContext(), AppDatabase.class, "production")
+                .allowMainThreadQueries()
+                .build();
         Bundle mExtras = getArguments();
         String Email = mExtras.getString("Email");
-        Log.d(TAG,Email);
-       mTravelList = db.userDao().getAllTravels(Email);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext() );
+        Log.d(TAG, Email);
+        mTravelList = db.userDao().getAllTravels(Email);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(layoutManager);
 
         mTravelAdapter = new TravelAdapter(mTravelList);

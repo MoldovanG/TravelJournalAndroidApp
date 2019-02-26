@@ -6,22 +6,22 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class TravelObject {
-    @PrimaryKey(autoGenerate = true )
+    @PrimaryKey(autoGenerate = true)
     private int id;
 
-    @ColumnInfo (name = "picture")
+    @ColumnInfo(name = "picture")
     private String mPicture;
 
-    @ColumnInfo (name = "bold_text")
+    @ColumnInfo(name = "bold_text")
     private String mBoldText;
 
-    @ColumnInfo (name = "normal_text")
+    @ColumnInfo(name = "normal_text")
     private String mNormalText;
 
-    @ColumnInfo (name = "favourite_flag")
+    @ColumnInfo(name = "favourite_flag")
     private boolean mFavouriteFlag;
 
-    @ColumnInfo (name = "email")
+    @ColumnInfo(name = "email")
     private String mEmail; // asa diferentiez obiectele de travel intre utilizatori
 
     public TravelObject(String mPicture, String mBoldText, String mNormalText, boolean mFavouriteFlag, String mEmail) {
@@ -33,16 +33,22 @@ public class TravelObject {
     }
 
 
-    public String getPicture () {return mPicture;}
+    public String getPicture() {
+        return mPicture;
+    }
+
     public String getBoldText() {
         return mBoldText;
     }
+
     public String getNormalText() {
         return mNormalText;
     }
+
     public boolean getFavouriteFlag() {
         return mFavouriteFlag;
     }
+
     public String getEmail() {
         return mEmail;
     }

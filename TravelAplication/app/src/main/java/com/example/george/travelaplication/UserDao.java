@@ -6,12 +6,11 @@ import android.arch.persistence.room.Query;
 
 import java.util.List;
 
-import static android.icu.text.MessagePattern.ArgType.SELECT;
 @Dao
 public interface UserDao {
-    @Query("SELECT * FROM  travelobject WHERE email = :mEmail"  )
+    @Query("SELECT * FROM  travelobject WHERE email = :mEmail")
     List<TravelObject> getAllTravels(String mEmail);
 
     @Insert
-    void insertAll (TravelObject... travelObjects );
+    void insertAll(TravelObject... travelObjects);
 }

@@ -1,14 +1,11 @@
 package com.example.george.travelaplication;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
@@ -17,8 +14,8 @@ import java.util.List;
 
 public class TravelAdapter extends RecyclerView.Adapter<TravelViewHolder> {
 
-    private static final String TAG = "TRAVELADAPTERTAG" ;
-    List <TravelObject> mTravelObjects;
+    private static final String TAG = "TRAVELADAPTERTAG";
+    List<TravelObject> mTravelObjects;
 
     public TravelAdapter(List<TravelObject> mTravelObjects) {
         this.mTravelObjects = mTravelObjects;
@@ -39,10 +36,11 @@ public class TravelAdapter extends RecyclerView.Adapter<TravelViewHolder> {
         travelViewHolder.mBoldTextView.setText(mTravel.getmBoldText());
         travelViewHolder.mNormalTextView.setText(mTravel.getmNormalText());
 
-        File imgFile = new  File(mTravel.getmPicture());
+        File imgFile = new File(mTravel.getmPicture());
 
-        if (!mTravel.getmPicture().isEmpty()) Picasso.get().load(mTravel.getmPicture()).into(travelViewHolder.mImageView);
-        Log.d(TAG , mTravel.getmPicture());
+        if (!mTravel.getmPicture().isEmpty())
+            Picasso.get().load(mTravel.getmPicture()).into(travelViewHolder.mImageView);
+        Log.d(TAG, mTravel.getmPicture());
     }
 
     @Override
